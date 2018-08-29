@@ -57,7 +57,7 @@ app.post('/send', (req, res) => {
   // setup email data with unicode symbols
   let mailOptions = {
       from: '"Nodemailer Contact" <test4jake@gmail.com>', // sender address
-      to: 'RECEIVEREMAILS', // list of receivers
+      to: 'test4jake@gmail.com', // list of receivers
       subject: 'Node Contact Request', // Subject line
       text: 'Hello world?', // plain text body
       html: output // html body
@@ -109,4 +109,4 @@ app.post('/send', (req, res) => {
 
 
 
-app.listen(3001);
+app.listen(3002);
