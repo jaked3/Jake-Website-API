@@ -15,6 +15,7 @@ app.set('view engine', 'handlebars');
 //bodyparser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors());
 
 //static folder
 app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -22,7 +23,8 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req,res) => {
-	res.render('contact');
+	//res.render('contact');
+  res.send('it is working!');
 })
 
 
