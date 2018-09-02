@@ -20,7 +20,7 @@ app.use(cors());
 
 app.get('/', (req,res) => {
 	//res.render('contact');
-  res.send('it is working!');
+  res.send("it is working!");
 })
 
 
