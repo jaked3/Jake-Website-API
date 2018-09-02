@@ -76,7 +76,7 @@ app.post('/send', (req, res) => {
 
 
 
-app.listen(proccess.env.PORT || 3001,() => 
+app.listen(process.env.PORT || 3001,() => 
   {
     console.log('working');
   });
