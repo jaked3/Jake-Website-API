@@ -9,8 +9,8 @@ const path =require('path');
 const app = express();
 
 //view engine setup
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', exphbs());
+//app.set('view engine', 'handlebars');
 
 //bodyparser middleware
 app.use(bodyParser.urlencoded({extended: false}));
