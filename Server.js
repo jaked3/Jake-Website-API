@@ -48,8 +48,8 @@ app.post('/send', (req, res) => {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-        user: 'test4jake@gmail.com', // generated ethereal user
-        pass: 'testJake4!!'  // generated ethereal password
+        user: process.env.user, // generated ethereal user
+        pass: process.env.pass  // generated ethereal password
     },
     tls:{
       rejectUnauthorized:false
@@ -58,8 +58,8 @@ app.post('/send', (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-      from: '"Nodemailer Contact" <test4jake@gmail.com>', // sender address
-      to: 'test4jake@gmail.com', // list of receivers
+      from: '"Nodemailer Contact" <>', // sender address
+      to: process.env.user, // list of receivers
       subject: 'Node Contact Request', // Subject line
       text: 'Hello world?', // plain text body
       html: output // html body
@@ -79,37 +79,8 @@ app.post('/send', (req, res) => {
   });
 
 
-// // // POST route from contact form
-// app.post('/contact', function (req, res) {
-//   let mailOpts, smtpTrans;
-//   smtpTrans = nodemailer.createTransport({
-//     host: 'smtp.gmail.com',
-//     port: 465,
-//     secure: true,
-//     auth: {
-//       user: 'test4jake@gmail.com',
-//       pass: 'testJake4!!'
-//     },
-//     tls:{
-//     	rejectUnauthorized: false
-//     }
-//   });
-//   mailOpts = {
-//     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-//     to: 'test4jake@gmail.com',
-//     subject: 'New message from contact form',
-//     text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-//   };
-//   smtpTrans.sendMail(mailOpts, function (error, response) {
-//     if (error) {
-//       res.render('contact-failure');
-//     }
-//     else {
-//       res.render('contact-success');
-//     }
-//   });
-// });
 
-
-
-app.listen(3001);
+app.listen(proccess.env.PORT || 3001,() => 
+  {
+    console.log('working :)');
+  });
